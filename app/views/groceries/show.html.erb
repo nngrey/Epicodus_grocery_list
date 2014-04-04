@@ -4,4 +4,11 @@
 <p>Saved status: <%= @grocery.saved %></p>
 <p>Checked status: <%= @grocery.checked %></p>
 
+<button><a href="/groceries/<%= @grocery.id%>/edit">Edit</a></button>
+<button><a href="/groceries/<%= @grocery.id%>"
+          data-confirm="Sure you want to delete?"
+          data-method="delete"
+          rel="nofollow">Delete</a>
+</button>
+
 <p><a href="/groceries">Return to grocery list</a></p>

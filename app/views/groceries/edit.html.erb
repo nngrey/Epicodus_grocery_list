@@ -1,0 +1,20 @@
+<h1>Edit Item</h1>
+
+<% if @grocery.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @grocery.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/groceries/<%= @grocery.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="grocery_name">Item Name</label>
+  <input id="grocery_name" name="grocery[name]" type="text" value="<%= @grocery.name %>">
+  <label for="grocery_location">Location</label>
+  <input id="grocery_location" name="grocery[location]" type="text" value="<%= @grocery.location %>">
+  <br>
+  <button class="btn btn-primary">Update Item</button>
+</form>
