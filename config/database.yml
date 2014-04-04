@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: grocery_list_development
+
+test:
+  adapter: postgresql
+  database: grocery_list_test
