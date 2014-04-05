@@ -19,4 +19,4 @@ To Do:
 
 As a shopper, I want to be able to create more than one list, so that I can organize different shopping trips.
 
-
+As a user, I want to be able to create an account and share my lists with other people.
