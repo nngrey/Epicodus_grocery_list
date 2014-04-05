@@ -8,4 +8,13 @@ class Grocery < ActiveRecord::Base
    Grocery.where saved: true
   end
 
+  def self.checked
+    Grocery.where checked: true
+  end
+
+  # def mark_checked
+  #   self.update(:checked => true)
+  #   redirect_to "/groceries"
+  # end
+
 end

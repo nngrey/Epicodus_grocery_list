@@ -14,4 +14,9 @@ As a shopper, I want to associate a location with an item, so that I know where 
 
 As a shopper, I want to be able to check items off my list without deleting them, so I can see what I have before deleting them.
 
+To Do:
+------
+
+As a shopper, I want to be able to create more than one list, so that I can organize different shopping trips.
+
 

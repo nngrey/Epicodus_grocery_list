@@ -3,12 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <ul>
-        <% @groceries.each do |grocery| %>
-        <li><a href="/groceries/<%= grocery.id %>"><%= grocery.name %></a> | <%= grocery.location%></li>
-        <% end %>
-      </ul>
-
+      <h4>Add to your list!</h4>
       <div class="form">
         <form action="/groceries/" method="post">
           <label for="grocery_name">Item Name</label>
@@ -19,13 +14,37 @@
           <button class="btn btn-primary">Add</button>
         </form>
       </div>
+
+      <ul class="list-unstyled">
+        <% @groceries.each do |grocery| %>
+          <% if grocery.checked == false %>
+            <li>
+              <form action="/groceries/<%= grocery.id %>" method="post">
+                <input name="_method" type="hidden" value="patch">
+                <input name="grocery[checked]" type="hidden" value="true">
+                <span><a href="/groceries/<%= grocery.id %>"><%= grocery.name %></a> | <%= grocery.location%></span>
+                <button>hide</button>
+              </form>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+
+
     </div>
     <div class="col-md-3">
       <h4>Saved Items</h4>
-      <p>coming soon!</p>
-        <ul>
-          <% @groceries.saved.each do |item| %>
-            <li><%= item.name %></li>
+      <p></p>
+        <ul class="list-inline">
+          <% @groceries.saved.each do |grocery| %>
+            <li>
+              <form action="/groceries/<%= grocery.id %>" method="post">
+                <input name="_method" type="hidden" value="patch">
+                <input name="grocery[checked]" type="hidden" value="false">
+                <span><a href="/groceries/<%= grocery.id %>"><%= grocery.name %></a> | </span>
+                <button>add</button>
+              </form>
+            </li>
           <% end %>
         </ul>
 
