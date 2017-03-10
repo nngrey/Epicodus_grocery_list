@@ -1,4 +1,4 @@
-Build Your Own Site Project
+Epicodus Exercise
 ===========================
 
 Grocery List Sharing App
